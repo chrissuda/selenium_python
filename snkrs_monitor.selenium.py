@@ -13,9 +13,12 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from twilio.rest import Client
 import logging
 snkrs=[]
-phone_receiver='+19292998697'
+phone_receiver=''
 phone_sender='+16307964576'
 frequency=50  #how often does the program run 
+account_sid=' ' #from twilio account
+auth_token=' '  #from twilio account
+
 
 logging.basicConfig(level=logging.INFO,
 			filename='snkr.log',
@@ -58,8 +61,8 @@ def monitor():
 					pass
 				else:
 					print(Pass)
-					account_sid='AC12d31096ff908c444a1e9baae82b9ee2'
-					auth_token='eb33c5300e2b0965d4fda121d75b2b2c'
+					account_sid=account_sid
+					auth_token=auth_token
 					client=Client(account_sid,auth_token)
 					
 					message=client.messages.create(
